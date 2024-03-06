@@ -1,4 +1,4 @@
-package com.abciloveu.contoller;
+package com.abciloveu.web.contoller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

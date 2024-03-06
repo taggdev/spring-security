@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProfile name="local|mac">
+        <appender name="app-appender" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>[%d{dd/MM/yyyy HH:mm:ss.SSS}][%X{keyref}] %-5level %logger - %msg%n</pattern>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <springProfile name="dev|uat|prod">
+        <springProperty name="APP_NAME" source="app.name" defaultValue="logs" />
+        <springProperty name="LOG_PATH" source="logging.file.path" defaultValue="logs" />
+
+        <appender name="app-appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${LOG_PATH}/${APP_NAME}.log</file>
+            <encoder>
+                <pattern>[%d{dd/MM/yyyy HH:mm:ss.SSS}][%X{keyref}] %-5level %logger - %msg%n</pattern>
+            </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${LOG_PATH}/${APP_NAME}.log.%d{yyyy-MM-dd}</fileNamePattern>
+                <maxHistory>7</maxHistory>
+            </rollingPolicy>
+        </appender>
+    </springProfile>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <root level="error">
+        <appender-ref ref="app-appender"/>
+    </root>
+</configuration>

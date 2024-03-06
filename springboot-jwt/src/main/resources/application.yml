@@ -1,0 +1,26 @@
+app:
+  name: springboot-jwt
+
+server:
+  servlet:
+    context-path: /app
+    encoding:
+      charset: UTF-8
+
+spring:
+  profiles.active: mac
+  application:
+    name: ${app.name:springboot-basic-jwt}
+  main:
+    banner-mode: off
+
+logging:
+  level:
+    root: error
+    com.abciloveu: debug
+    org.springframework: error
+    org.hibernate: error
+  file:
+    name: ${app.name}.log
+    path: d:\\logs\applog\${app.name}
+

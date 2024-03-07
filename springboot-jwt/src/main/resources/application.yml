@@ -8,11 +8,30 @@ server:
       charset: UTF-8
 
 spring:
-  profiles.active: mac
+  main.banner-mode: off
+  profiles.include: mac
   application:
     name: ${app.name:springboot-basic-jwt}
-  main:
-    banner-mode: off
+  datasource:
+    url: ${MARIADB_URL}
+    username: ${MARIADB_USERNAME}
+    password: ${MARIADB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1
+      minimum-idle: 1
+      idle-timeout: 10000
+      max-lifetime: 60000
+      connection-timeout: 20000
+      maximum-pool-size: 10
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDB102Dialect
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: off
+    show-sql: ${JPA_SHOW_SQL}
 
 logging:
   level:

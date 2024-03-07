@@ -1,4 +1,4 @@
-package com.abciloveu.web.contoller;
+package com.abciloveu.web.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-public class MessageController {
+public class AdminController {
 
-    @GetMapping("/v1/messages")
-    public ResponseEntity<List<String>> messages() {
-        return ResponseEntity.ok(Arrays.asList("first", "second"));
+    @GetMapping("/admin/configs")
+    public ResponseEntity<List<String>> configs() {
+        return ResponseEntity.ok(Arrays.asList("config1", "config2"));
     }
 }

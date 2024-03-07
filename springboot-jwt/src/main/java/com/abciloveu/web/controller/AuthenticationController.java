@@ -1,4 +1,4 @@
-package com.abciloveu.web.contoller;
+package com.abciloveu.web.controller;
 
 import javax.validation.Valid;
 

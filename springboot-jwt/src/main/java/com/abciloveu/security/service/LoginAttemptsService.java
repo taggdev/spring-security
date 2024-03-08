@@ -3,11 +3,6 @@ package com.abciloveu.security.service;
 import java.util.Date;
 import java.util.Optional;
 
-import com.abciloveu.entites.AppUser;
-import com.abciloveu.entites.LoginAttempts;
-import com.abciloveu.exception.RecordNotFoundException;
-import com.abciloveu.repositories.AppUserRepository;
-import com.abciloveu.repositories.LoginAttemptsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -21,10 +16,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import com.abciloveu.entities.AppUser;
+import com.abciloveu.entities.LoginAttempts;
+import com.abciloveu.exception.RecordNotFoundException;
+import com.abciloveu.repository.AppUserRepository;
+import com.abciloveu.repository.LoginAttemptsRepository;
 
-
-
-
+/**
+ * TODO load maxAttempts from global config
+ */
 @Service
 @Transactional(readOnly = true, rollbackFor = Exception.class)
 public class LoginAttemptsService implements InitializingBean, MessageSourceAware {

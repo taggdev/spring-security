@@ -5,10 +5,11 @@ import java.util.List;
 
 import javax.persistence.criteria.Predicate;
 
-import com.abciloveu.entites.AppUser;
-import com.abciloveu.model.AppUserCriteria;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
+
+import com.abciloveu.entities.AppUser;
+import com.abciloveu.model.AppUserCriteria;
 
 public class AppUserSpecification {
 

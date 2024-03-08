@@ -1,12 +1,14 @@
 package com.abciloveu.model;
 
-import com.abciloveu.validation.ValidPassword;
-
 import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
 
-//@ApiModel
+import com.abciloveu.validation.ValidPassword;
+
+import io.swagger.annotations.ApiModel;
+
+@ApiModel
 public class ResetPasswordRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;

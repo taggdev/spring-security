@@ -1,6 +1,6 @@
 package com.abciloveu.security.service;
 
-import com.abciloveu.entites.AppUser;
+import com.abciloveu.entities.AppUser;
 import com.abciloveu.model.ChangePasswordRequest;
 import com.abciloveu.model.UpdateProfileRequest;
 

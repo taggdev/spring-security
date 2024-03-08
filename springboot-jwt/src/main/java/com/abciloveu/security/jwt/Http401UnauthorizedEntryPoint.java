@@ -17,7 +17,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
  */
 public class Http401UnauthorizedEntryPoint implements AuthenticationEntryPoint {
 
-	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+	private static final Logger LOG = LoggerFactory.getLogger(Http401UnauthorizedEntryPoint.class);
 
 	/**
      * This is invoked when a user tries to access a secured REST resource without supplying any credentials.

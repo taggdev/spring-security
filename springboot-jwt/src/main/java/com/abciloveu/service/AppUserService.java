@@ -10,15 +10,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotNull;
 
-import com.abciloveu.entites.AppRole;
-import com.abciloveu.entites.AppUser;
-import com.abciloveu.exception.BadResourceException;
-import com.abciloveu.exception.RecordNotFoundException;
 import com.abciloveu.model.*;
-import com.abciloveu.repositories.AppRoleRepository;
-import com.abciloveu.repositories.AppUserRepository;
-import com.abciloveu.security.service.UserProfileService;
-import com.abciloveu.specification.AppUserSpecification;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +24,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.abciloveu.entities.AppRole;
+import com.abciloveu.entities.AppUser;
+import com.abciloveu.exception.BadResourceException;
+import com.abciloveu.exception.RecordNotFoundException;
+import com.abciloveu.repository.AppRoleRepository;
+import com.abciloveu.repository.AppUserRepository;
+import com.abciloveu.security.service.UserProfileService;
+import com.abciloveu.specification.AppUserSpecification;
 
 @Service
 @Transactional(readOnly = true, rollbackFor = Exception.class)

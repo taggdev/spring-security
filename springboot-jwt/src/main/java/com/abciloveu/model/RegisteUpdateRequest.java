@@ -1,7 +1,10 @@
 package com.abciloveu.model;
 
-import com.abciloveu.validation.ValidPassword;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.abciloveu.validation.ValidPassword;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -11,14 +14,14 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-//@ApiModel
+@ApiModel
 public class RegisteUpdateRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@NotBlank
 	@Size(min = 2, max = 50)
-//	@ApiModelProperty(position = 1)
+	@ApiModelProperty(position = 1)
 	@Pattern(regexp = "^[a-z0-9._-]{2,20}$", flags = Flag.UNICODE_CASE)
 	private String username;
 

@@ -1,0 +1,62 @@
+{"properties": [
+  
+  {
+    "name": "logging.json",
+    "type": "java.lang.String",
+    "description": "flag to enable json loging"
+  },
+  {
+    "name": "infra.zone",
+    "type": "java.lang.String",
+    "description": "Zone DEV/MTG/PBI"
+  },
+  {
+    "name": "infra.service-name",
+    "type": "java.lang.String",
+    "description": "service-name"
+  },
+  {
+    "name": "infra.application-name",
+    "type": "java.lang.String",
+    "description": "config application-name"
+  },
+  {
+    "name": "infra.application-index",
+    "type": "java.lang.String",
+    "description": "config application-index"
+  },
+  {
+    "name": "infra.hostname",
+    "type": "java.lang.String",
+    "description": "config physical hostname"
+  },
+  {
+    "name": "elf.zone",
+    "type": "java.lang.String"
+  },
+  {
+    "name": "elf.hostname",
+    "type": "java.lang.String"
+  },
+  {
+    "name": "elf.service-name",
+    "type": "java.lang.String"
+  },
+  {
+    "name": "elf.application-name",
+    "type": "java.lang.String"
+  },
+  {
+    "name": "elf.application-index",
+    "type": "java.lang.String"
+  },
+  {
+    "name": "elf.kafka.bootstrap-servers",
+    "type": "java.lang.String"
+  },
+  {
+    "name": "infra.instance-id",
+    "type": "java.lang.String",
+    "description": "A description for 'infra.instance-id'"
+  }
+]}

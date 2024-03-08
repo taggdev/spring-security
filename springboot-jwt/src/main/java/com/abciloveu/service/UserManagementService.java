@@ -1,10 +1,11 @@
 package com.abciloveu.service;
 
-import com.abciloveu.entites.AppUser;
-import com.abciloveu.model.AppUserCriteria;
 import com.abciloveu.model.RegisteUpdateRequest;
-import com.abciloveu.model.RegisterRequest;
 import org.springframework.data.domain.Page;
+
+import com.abciloveu.entities.AppUser;
+import com.abciloveu.model.AppUserCriteria;
+import com.abciloveu.model.RegisterRequest;
 
 public interface UserManagementService {
 

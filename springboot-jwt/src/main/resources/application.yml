@@ -3,7 +3,6 @@ app:
 
 server:
   servlet:
-    context-path: /app
     encoding:
       charset: UTF-8
 

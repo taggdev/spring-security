@@ -10,6 +10,12 @@ public class JwtResponse implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+//	private String username;
+	
+//	private String displayname;
+	
+//	private List<String> roles;
+	
 	private String type = "Bearer";
 
 	private String accessToken;
@@ -37,6 +43,14 @@ public class JwtResponse implements Serializable {
 		this.type = tokenType;
 	}
 
+//	public String getUsername() {
+//		return username;
+//	}
+//
+//	public void setUsername(String username) {
+//		this.username = username;
+//	}
+	
 	public Date getExpiration() {
 		return expiration;
 	}
@@ -45,4 +59,15 @@ public class JwtResponse implements Serializable {
 		this.expiration = expiration;
 	}
 
+//	public String getDisplayname() {
+//		return displayname;
+//	}
+//
+//	public void setDisplayname(String displayname) {
+//		this.displayname = displayname;
+//	}
+//
+//	public List<String> getRoles() {
+//		return roles;
+//	}
 }

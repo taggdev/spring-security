@@ -2,12 +2,13 @@ package com.abciloveu.security.access;
 
 import java.util.Collection;
 
-import com.abciloveu.model.UserProfile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.expression.SecurityExpressionRoot;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionOperations;
 import org.springframework.security.core.Authentication;
+
+import com.abciloveu.model.UserProfile;
 
 public class ApiSecurityExpressionRoot extends SecurityExpressionRoot implements MethodSecurityExpressionOperations {
 

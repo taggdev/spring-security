@@ -1,5 +1,6 @@
+/*
 drop table if exists app_user;
-
+ */
 create table app_user
 (
     id                      int auto_increment
@@ -22,8 +23,9 @@ create table app_user
         unique (username)
 );
 
-drop table if exists app_role;
-
+--
+-- drop table if exists app_role;
+--
 create table app_role
 (
     id          int auto_increment
@@ -38,7 +40,6 @@ create table app_role
     constraint UQ_APP_ROLE_ROLE_NAME
         unique (role_name)
 );
-
 
 
 create table login_attempts
@@ -56,6 +57,14 @@ create table user_role
     primary key (user_id, role_id)
 );
 
+INSERT INTO app_user (id, username, password, display_name, contact_name, contact_tel, enabled, account_non_expired, account_non_locked, credentials_non_expired, last_password_reset, create_dt, create_by, last_upd, upd_by) VALUES (1, 'admin', '{bcrypt}$2a$10$z4NgpeomTdZ32xwbaucayeGak2uI42b1jq6pBHPGki/GqiyXT3tHi', 'admin', '-', '-', 1, 1, 1, 1, null, '2024-03-08 14:50:55', '-', '2024-03-08 17:37:01', 'SYSTEM');
+INSERT INTO app_user (id, username, password, display_name, contact_name, contact_tel, enabled, account_non_expired, account_non_locked, credentials_non_expired, last_password_reset, create_dt, create_by, last_upd, upd_by) VALUES (2, 'taggdev', '{bcrypt}$2a$12$BOdTG0iQCEWQEusbD4aBNOLqFRqvYb1H/31P9Ww9dTlAxNZI3rTHC', 'tagg dev', '-', '-', 1, 1, 1, 1, null, '2024-03-08 14:50:55', '-', '2024-03-08 17:37:01', 'SYSTEM');
+
+INSERT INTO user_role (user_id, role_id) VALUES (1, 1);
+INSERT INTO user_role (user_id, role_id) VALUES (2, 1);
+
+INSERT INTO app_role (id, role_name, description, privileges, create_dt, create_by, last_upd, upd_by) VALUES (1, 'ADMIN', 'admin', '1', '2024-03-08 17:29:01', 'admin', null, null);
+INSERT INTO app_role (id, role_name, description, privileges, create_dt, create_by, last_upd, upd_by) VALUES (2, 'USER', 'user', '', '2024-03-08 17:29:01', 'admin', null, null);
 
 
 select * from app_user;

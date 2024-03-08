@@ -11,21 +11,24 @@ import javax.validation.constraints.Pattern.Flag;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.abciloveu.validation.ValidPassword;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-//@ApiModel
+@ApiModel
 public class RegisterRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@NotBlank
 	@Size(min = 2, max = 50)
-//	@ApiModelProperty(position = 1)
+	@ApiModelProperty(position = 1)
 	@Pattern(regexp = "^[a-z0-9._-]{2,20}$", flags = Flag.UNICODE_CASE)
 	private String username;
 
     @NotBlank
-//    @ValidPassword
+    @ValidPassword
 	@Size(max = 50)
 	@JsonIgnoreProperties(allowGetters = false, allowSetters = true)
     private String password;

@@ -11,14 +11,15 @@ import java.util.stream.Collectors;
 
 import javax.crypto.SecretKey;
 
-import com.abciloveu.config.properties.JwtTokenProperties;
-import com.abciloveu.model.UserProfile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
+
+import com.abciloveu.configuration.properties.JwtTokenProperties;
+import com.abciloveu.model.UserProfile;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -40,10 +41,10 @@ public class JwtUtils {
 
 	private static final Logger LOG = LoggerFactory.getLogger(JwtUtils.class);
 
-	static final String CLAIM_KEY_ROLES                     = "roles";
-	static final String CLAIM_KEY_DISPLAYNAME               = "displayname";
-	static final String CLAIM_KEY_PRIVILEGES                = "privileges";
-	static final String CLAIM_KEY_LAST_PASSWORD_RESET       = "lastPasswordReset";
+	public static final String CLAIM_KEY_ROLES                     = "roles";
+	public static final String CLAIM_KEY_DISPLAYNAME               = "displayname";
+	public static final String CLAIM_KEY_PRIVILEGES                = "privileges";
+	public static final String CLAIM_KEY_LAST_PASSWORD_RESET       = "lastPasswordReset";
 
 	private final String issuer;
 
@@ -226,7 +227,7 @@ public class JwtUtils {
 		}
 	}
 
-	Date getIssuedAtDateFromTokenClaims(Claims claims) throws JwtAuthenticationException {
+	public Date getIssuedAtDateFromTokenClaims(Claims claims) throws JwtAuthenticationException {
 		try {
 			return claims.getIssuedAt();
 		}
@@ -238,7 +239,7 @@ public class JwtUtils {
 		}
 	}
 
-	Date getExpirationDateFromTokenClaims(Claims claims) throws JwtAuthenticationException {
+	public Date getExpirationDateFromTokenClaims(Claims claims) throws JwtAuthenticationException {
 		try {
 			return claims.getExpiration();
 		}
@@ -250,7 +251,7 @@ public class JwtUtils {
 		}
 	}
 
-	Date getLastPasswordResetDateFromTokenClaims(Claims claims) {
+	public Date getLastPasswordResetDateFromTokenClaims(Claims claims) {
 		Date lastPasswordResetDate = null;
 		try {
 			final Long resetDate = (Long) claims.get(CLAIM_KEY_LAST_PASSWORD_RESET);

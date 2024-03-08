@@ -5,6 +5,13 @@ MARIADB_PASSWORD: taggdev132
 
 JPA_SHOW_SQL: true
 
+security:
+  jwt:
+    token:
+      secret-Key: 1MswXwkdfkETufIvxwYAT5ISkz3sjdfEmEaud4mfem6qhpclDKB4ZUwXMmUb5y2IcpujmkNzzNhd52SYD/JnYw==
+      expiration: 1h
+      algorithm: HS512
+
 logging:
   file:
     path: /logs/applog/${app.name}

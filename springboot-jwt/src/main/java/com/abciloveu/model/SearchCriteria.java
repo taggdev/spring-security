@@ -1,9 +1,9 @@
 package com.abciloveu.model;
 
-import org.springframework.data.domain.Sort;
-
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+
+import org.springframework.data.domain.Sort;
 
 public abstract class SearchCriteria {
 

@@ -20,7 +20,7 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long>, JpaSpec
 	boolean existsByUsernameIgnoreCase(String username);
 
 	@Modifying(clearAutomatically=true, flushAutomatically = true)
-	@Query("UPDATE AppUser u SET u.accountNonLocked = :accNonLocked, updBy = 'SYSTEM', lastUpd = CURRENT_DATE WHERE username = :username")
-	int updateAccountNonLocked(@Param("accNonLocked") boolean accNonLocked, @Param("username") String username);
+	@Query("UPDATE AppUser u SET u.accountNonLocked = :accNonLocked, u.updBy = 'SYSTEM', u.lastUpd = CURRENT_DATE WHERE u.username = :username")
+	void updateAccountNonLocked(@Param("accNonLocked") boolean accNonLocked, @Param("username") String username);
 	
 }

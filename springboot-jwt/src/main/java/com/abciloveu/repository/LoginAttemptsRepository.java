@@ -19,7 +19,7 @@ public interface LoginAttemptsRepository extends JpaRepository<LoginAttempts, Lo
 	int updateFailAttempts(@Param("username") String username);
 	
 	@Modifying(clearAutomatically = true)
-	@Query("UPDATE LoginAttempts a SET a.attempts = 0, a.lastUpd = null WHERE a.username = :username")
+	@Query("UPDATE LoginAttempts a SET a.attempts = 0, a.lastUpd = current_timestamp WHERE a.username = :username")
 	int resetFailAttempts(@Param("username") String username);
 	
 	Optional<LoginAttempts> getLoginAttemptsByUsername(String username);

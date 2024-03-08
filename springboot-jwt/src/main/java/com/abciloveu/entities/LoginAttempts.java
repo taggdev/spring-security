@@ -6,8 +6,6 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -21,14 +19,9 @@ import org.springframework.data.annotation.LastModifiedDate;
 @Table(name = "login_attempts")
 public class LoginAttempts implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -2958717875530339169L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Long id;
-
-	@NotBlank
 	@Size(max = 50)
 	@Column(name = "username")
 	private String username;
@@ -50,16 +43,6 @@ public class LoginAttempts implements Serializable {
 		this.username = username;
 		this.attempts = attempts;
 		this.lastUpd = lastUpd;
-	}
-
-
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getUsername() {

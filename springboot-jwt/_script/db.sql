@@ -44,10 +44,12 @@ create table app_role
 
 create table login_attempts
 (
-    id       int         null,
-    username varchar(50) null,
-    attempts tinyint     null,
-    last_upd datetime    null
+    id       int auto_increment not null,
+    username varchar(50) not null,
+    attempts tinyint     not null,
+    last_upd datetime    not null,
+    constraint login_attempts_pk
+        unique (id)
 );
 
 create table user_role

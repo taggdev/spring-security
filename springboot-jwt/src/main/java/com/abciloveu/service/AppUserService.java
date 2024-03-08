@@ -163,7 +163,7 @@ public class AppUserService implements UserProfileService, UserManagementService
 	}
 
 
-	@Transactional(readOnly = false, noRollbackFor = Exception.class)
+	@Transactional(noRollbackFor = Exception.class)
 	public AppUser createUser(final RegisterRequest registerRequest) {
 		if (this.userExists(registerRequest.getUsername())) {
 			throw new DuplicateKeyException("Username is already exists: " + registerRequest.getUsername());

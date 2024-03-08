@@ -73,7 +73,7 @@ public class LoginAttemptsService implements InitializingBean, MessageSourceAwar
 		this.maxAttempts = maxAttempts;
 	}
 
-	@Transactional(readOnly = false, rollbackFor = Exception.class, noRollbackFor = LockedException.class)
+	@Transactional(rollbackFor = Exception.class, noRollbackFor = LockedException.class)
 	public void updateFailAttempts(String username) {
 		final Optional<LoginAttempts> mayAttempts = loginAttemptsRepository.getLoginAttemptsByUsername(username);
 		if (!mayAttempts.isPresent()) {
@@ -109,7 +109,7 @@ public class LoginAttemptsService implements InitializingBean, MessageSourceAwar
 		loginAttemptsRepository.resetFailAttempts(username);
 	}
 	
-	@Transactional(readOnly = false, noRollbackFor = Exception.class)
+	@Transactional(noRollbackFor = Exception.class)
 	public AppUser unlockUser(final Long id) {
 		LOG.debug("Unlocking User id = '{}'.", id);
 

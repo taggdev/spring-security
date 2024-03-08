@@ -1,4 +1,4 @@
-package com.abciloveu.admin.security.filter;
+package com.abciloveu.security.filter;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;

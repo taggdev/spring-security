@@ -1,4 +1,4 @@
-package com.abciloveu.admin.security.jwt;
+package com.abciloveu.security.jwt;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.times;

@@ -24,7 +24,7 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.abciloveu.common.Audit;
+import com.abciloveu.entities.common.Audit;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Type;
 

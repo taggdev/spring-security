@@ -1,4 +1,4 @@
-package com.abciloveu.common;
+package com.abciloveu.entities.common;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;

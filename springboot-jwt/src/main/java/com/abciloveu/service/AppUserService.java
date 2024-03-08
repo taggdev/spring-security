@@ -111,7 +111,7 @@ public class AppUserService implements UserProfileService, UserManagementService
 	}
 
 	@Transactional(readOnly = false, rollbackFor = Exception.class)
-	public AppUser updateUser(final Long id, final RegisteUpdateRequest user) {
+	public AppUser updateUser(final Long id, final RegisterUpdateRequest user) {
 
 		final AppUser entity = this.findById(id);
 

@@ -1,6 +1,6 @@
 package com.abciloveu.service;
 
-import com.abciloveu.model.RegisteUpdateRequest;
+import com.abciloveu.model.RegisterUpdateRequest;
 import org.springframework.data.domain.Page;
 
 import com.abciloveu.entities.AppUser;
@@ -21,7 +21,7 @@ public interface UserManagementService {
 
 	AppUser updateUser(Long id, AppUser user);
 
-	AppUser updateUser(Long id, RegisteUpdateRequest user);
+	AppUser updateUser(Long id, RegisterUpdateRequest user);
 
 	void resetPassword(Long id, String newPassword);
 

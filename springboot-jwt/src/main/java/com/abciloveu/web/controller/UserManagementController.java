@@ -5,7 +5,7 @@ import java.net.URI;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import com.abciloveu.model.RegisteUpdateRequest;
+import com.abciloveu.model.RegisterUpdateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -31,7 +31,6 @@ import com.abciloveu.model.RegisterRequest;
 import com.abciloveu.model.ResetPasswordRequest;
 import com.abciloveu.security.service.LoginAttemptsService;
 import com.abciloveu.service.UserManagementService;
-import com.abciloveu.specification.AppUserSpecification;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -94,7 +93,7 @@ public class UserManagementController {
 	@PutMapping("/{id}")
 	@Secured({ SecurityConstants.ROLE_ADMIN })
 	@ApiOperation(value = "Update User")
-	public AppUser updateUser(@NotNull @PathVariable Long id, @Valid @RequestBody RegisteUpdateRequest user) {
+	public AppUser updateUser(@NotNull @PathVariable Long id, @Valid @RequestBody RegisterUpdateRequest user) {
 		return userService.updateUser(id, user);
 	}
 

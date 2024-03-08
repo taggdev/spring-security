@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.abciloveu.common.Audit;
+import com.abciloveu.entities.common.Audit;
 import com.abciloveu.converter.StringSetConverter;
 
 @Entity

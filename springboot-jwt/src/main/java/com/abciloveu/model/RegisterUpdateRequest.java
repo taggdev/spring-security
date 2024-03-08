@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ApiModel
-public class RegisteUpdateRequest implements Serializable {
+public class RegisterUpdateRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -54,7 +54,7 @@ public class RegisteUpdateRequest implements Serializable {
     @NotNull
 	private Set<Long> roles = new HashSet<>();
 
-	public RegisteUpdateRequest() {
+	public RegisterUpdateRequest() {
 		super();
 	}
 

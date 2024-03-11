@@ -24,9 +24,17 @@ public class BasicAuthWebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/app/v1/**").hasAnyRole("USER")
-                .antMatchers("/app/admin/**").hasAnyRole("ADMIN")
+//        http.authorizeRequests()
+//                .antMatchers("/app/v1/**").hasAnyRole("ADMIN", "USER")
+//                .antMatchers("/app/admin/**").hasRole("ADMIN")
+//                .anyRequest().authenticated()
+//                .and()
+//                .httpBasic()
+//                .authenticationEntryPoint(point);
+
+        http.authorizeHttpRequests()
+                .antMatchers("/app/v1/**").permitAll()
+                .antMatchers("/app/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()

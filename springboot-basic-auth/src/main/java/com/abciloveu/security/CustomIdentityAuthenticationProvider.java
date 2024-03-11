@@ -20,13 +20,15 @@ public class CustomIdentityAuthenticationProvider implements AuthenticationProvi
                     .withUsername(username)
                     .password("********")
                     .roles("USER")
+                    .authorities("READ")
                     .build();
         } else if (username.equalsIgnoreCase("admin")
-                && password.equalsIgnoreCase("admin")) {
+                && password.equalsIgnoreCase("admin132")) {
             user = User
                     .withUsername(username)
                     .password("********")
                     .roles("ADMIN")
+                    .authorities("READ", "CREATE", "DELETE")
                     .build();
         }
         return user;

@@ -1,16 +1,6 @@
-spring:
-#  datasource:
-#    url: jdbc:h2:mem:test_db
-#    username: sai
-#    password: password
-#    driver-class-name: org.h2.Driver
-#  h2:
-#    console:
-#      enabled: true
-#      path: /h2-console
-#  jpa:
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: false
-#    database-platform: org.hibernate.dialect.H2Dialect
+
+MARIADB_URL: jdbc:mariadb://localhost:3306/taggdev
+MARIADB_USERNAME: taggdev
+MARIADB_PASSWORD: taggdev132
+
+JPA_SHOW_SQL: true

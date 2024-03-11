@@ -124,21 +124,18 @@
             <version>${swagger-ui.version}</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.passay</groupId>
             <artifactId>passay</artifactId>
             <version>${passay.version}</version>
         </dependency>
-        
-        
+
         <!-- json-logging -->
         <dependency>
             <groupId>com.github.danielwegener</groupId>
